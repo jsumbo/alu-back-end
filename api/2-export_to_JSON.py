@@ -33,7 +33,11 @@ def main():
     data[user_id] = []
 
     for todo in todos:
-        data[user_id].append({'username': username, 'task': todo['title'], 'completed': todo['completed']})
+        data[user_id].append({
+            'username': username,
+            'task': todo['title'],
+            'completed': todo['completed']
+        })
 
     with open(f'{user_id}.json', 'w') as f:
         dump(data, f)
