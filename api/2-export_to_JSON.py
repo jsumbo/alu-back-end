@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Exports user task data to a csv file
+Exports user task data to a json file
 """
 from requests import get
 from json import dump
@@ -10,7 +10,6 @@ from sys import argv
 def get_data(url):
     """gets data from an api"""
     request = get(url)
-    
     if request.status_code == 200:
         return request.json()
     else:
@@ -35,7 +34,7 @@ def main():
 
     for todo in todos:
         data[user_id].append({'username': username, 'task': todo['title'], 'completed': todo['completed']})
-    
+
     with open(f'{user_id}.json', 'w') as f:
         dump(data, f)
 
