@@ -9,7 +9,6 @@ from sys import argv
 def get_data(url):
     """gets data from an api"""
     request = get(url)
-    
     if request.status_code == 200:
         return request.json()
     else:
@@ -30,7 +29,6 @@ def main():
 
     # Create text to write
     text = ''
-    
     for todo in todos:
         todo_status = todo["completed"]
         todo_title = todo["title"]
