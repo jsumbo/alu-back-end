@@ -46,7 +46,11 @@ def main():
     # Add todos to data object
     for todo in todos:
         user_id = todo["userId"]
-        task_data = {'username': users_hashmap[user_id], 'task': todo['title'], 'completed': todo['completed']}
+        task_data = {
+            'username': users_hashmap[user_id],
+            'task': todo['title'],
+            'completed': todo['completed']
+        }
 
         if user_id not in data:
             data[user_id] = []
