@@ -39,9 +39,9 @@ def main():
         # Check if all users are found
         all_users_found = all('id' in user for user in users)
         if all_users_found:
-            print("All users found: OK")
+            print("All users found: OK", end="")
         else:
-            print("All users found: Error")
+            print("All users found: Error", end="")
 
         # Create a user hashmap for faster lookup
         users_hashmap = {user['id']: user['username'] for user in users}
