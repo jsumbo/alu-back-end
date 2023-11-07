@@ -50,7 +50,7 @@ def main():
 
         if user_id not in data:
             data[user_id] = []
-        
+
         data[user_id].append(task_data)
 
     with open('todo_all_employees.json', 'w') as f:
